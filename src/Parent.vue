@@ -1,25 +1,55 @@
 <template>
   <div id="app">
-    <!-- Marks should be shown here -->
-    <Child1 />
-    <Child2 />
-    <!-- Your Submit Code and  -->
+    <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
+    <!-- <HelloWorld message="Welcome to Your Vue.js App"/> -->
+    <Quiz ref="quiz"/>
+    <Blanks ref="blanks"/>
+
+    <div>
+        <button class="btn" @click="QuizSubmitButton">Submit</button>
+        <p class="score">Score : {{ score }}</p>
+    </div>
+
   </div>
 </template>
 
 <script>
-import Child1 from './components/Child1.vue'
-import Child2 from './components/Child2.vue'
+// import HelloWorld from './components/HelloWorld.vue'
+
+import Quiz from './components/Quiz1.vue'
+
+import Blanks from './components/Quiz2.vue'
 
 export default {
-  name: 'Main',
+  name: 'App',
   components: {
-    Child1,Child2
+   Quiz,Blanks
+  },
+  data(){
+    return{
+      score:0
+    }
+  },methods:{
+    QuizSubmitButton(){
+      this.score=0;
+      this.$refs.quiz.QuizSubmitButton();
+      this.$refs.blanks.QuizSubmitButton();
+      this.score = this.$refs.quiz.score+this.$refs.blanks.score;
+    }
   }
-  // Your Code for Submiting the anwsers
 }
 </script>
 
-<style>
 
+
+
+<style>
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+  margin-top: 60px;
+}
 </style>
