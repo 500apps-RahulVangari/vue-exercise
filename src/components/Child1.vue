@@ -30,14 +30,14 @@ export default {
     return {
       multipleItems: [
         {
-          question: "Which company invented Vue.js?",
+          question: "1.Which company invented Vue.js?",
           options: ["Facebook", "Google", "Oracle"],
           given_ans: "",
           correct_ans: "Google",
         },
         {
           question:
-            "Which of the following directive is used for two-way binding in Vue.js?",
+            "2.Which of the following directive is used for two-way binding in Vue.js?",
           options: ["v-on", "v-model", "v-bind"],
           given_ans: "",
           correct_ans: "v-model",

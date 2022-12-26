@@ -1,10 +1,12 @@
 <template>
   <div id="app">
+    <h1>QUIZ</h1>
     <Child1 ref="multiple" />
-    <Child2 ref="blanks" /><br />
+    <Child2 ref="blanks" />
+    <br>
     <button type="reset" @click="resetForm"><b>reset</b></button>
     <button @click="validateForm"><b>submit</b></button>
-    <h1>Marks:{{ score }}</h1>
+    <h3>Marks:{{ score }}</h3>
   </div>
 </template>
 <script>

@@ -20,14 +20,14 @@
         return {
         blanksItems:[
           {
-            question1:"In a classroom student are to be trained to love",
+            question1:"1.In a classroom student are to be trained to love",
             question2:"",
             given_ans:"",
             correct_ans:"one another"
            },
            {
-            question1:"it took the child a long time to recover",    
-            question2:"the shock ",     
+            question1:"2.It took the child a long time to recover",    
+            question2:"the shock.",     
             given_ans:"",
             correct_ans:"from"
            },
