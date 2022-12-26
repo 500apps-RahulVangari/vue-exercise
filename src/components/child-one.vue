@@ -1,82 +1,70 @@
 <template>
     <div class="text">
-        <div class="text bg-color">
-            <h2 class="head">5. Which Country has Highest population?</h2>
-            <input class="input-size" type="text" v-model='India'  placeholder="Enter a Text"/>
-            <p :class="ageOutput.includes('Wrong') ? 'Wrongoutput' : 'Correctoutput'">Output :{{ ageOutput }}</p>    
-        </div>
-    
-        <div class="text bg-color">
-            <h2 class="head">6. Who killed Mahatma Gandhi?</h2>
-            <input class="input-size" type="text" v-model='Godse'  placeholder="Enter a Text"/>
-            <p :class="movieOutput.includes('Wrong') ? 'Wrongoutput' : 'Correctoutput'">Output :{{ movieOutput }}</p>    
-        </div>
+        <p class="head" v-for="(item, index) in questions" :key="index">
+            {{ item.question }}
+            <input type="text" v-model="selectedAnswer[index]" />
+
+        </p>
         
+        <!-- <p>
+            score : {{ score }}
+        </p> -->
     </div>
-          
-    </template>
-    
-    <script>
-    export default {
-        name:'QuizZ',
-        data() {
-            return {
-                answer4:'India',
-                India:'',
-                ageOutput:'',
-    
-                answer5:'Godse',
-                Godse:'',
-                movieOutput:'',
-    
-                score:0
-            }
-        },
-        methods:{
-            buttonEl(){
-                if(this.answer4===this.India){
-                    this.ageOutput='Correct Answer';
-                    this.score+=1;
+</template>    
+<script>
+export default {
+    name: 'QuizZ',
+    data() {
+        return {
+            questions: [
+                { question: '5.Who is the Back-Bone of our India ?', answer: 'farmer' },
+                { question: '6.Who killed Mahatma Gandhi ?', answer: 'godse' },
+            ],
+            selectedAnswer: [],
+            score: 0
+        }
+    },
+    methods: {
+        buttonEl() {
+            for (let i = 0; i < this.questions.length+1; i++) {
+                if (this.selectedAnswer[i] == this.questions[i].answer) {
+                    return this.score = this.score + 1;
                 }
-                else if(this.answer4!==this.India){
-                    this.ageOutput='Wrong Answer';
-                    this.score-=1;
-                }
-                if(this.answer5===this.Godse){
-                    this.movieOutput='Correct Answer';
-                    this.score+=1;
-                }
-                else{
-                    this.movieOutput='Wrong Answer';
-                    this.score-=1;
+                else {
+                    return this.score = this.score - 1;
                 }
             }
+
         }
     }
-    </script>
+}
+</script>
     
-    <style>
-    .text{
-        text-align:left;
-    }
     
-    .head {
-        font-size: 30px;
-        color:black;
-        font-family:"Roboto";
-    }
-    .Wrongoutput {
-        color: red
-    }
-    
-    .Correctoutput {
-        color: green
-    }
-    .input-size{
-        height:25px;
-        width:200px;
-        border-radius: 20px;
+<style>
+.text {
+    text-align: left;
+}
 
-    }
-    
-    </style>
+.head {
+    font-size: 23px;
+    color: black;
+    font-family: "Roboto";
+    font-weight:bold;
+}
+
+.Wrongoutput {
+    color: red
+}
+
+.Correctoutput {
+    color: green
+}
+
+.input-size {
+    height: 25px;
+    width: 200px;
+    border-radius: 20px;
+
+}
+</style>
