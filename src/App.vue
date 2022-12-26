@@ -1,56 +1,52 @@
 <template>
   <div id="app">
-    <McqQuestions ref="child1" />
-
-    <FillBlanks ref="child2" />
-
-    <input type="submit" value="Submit" />
-    <p>{{ result }}</p>
+    <mcqCode msg="Multipile Choice Questions" ref="output1"/>
+     <fillBlanks msg="Fill in the Blanks" ref="output2"/>
+     <button @click="GettingOutput()">submit</button>
+     <p>{{Result}}</p>
+     
   </div>
 </template>
 
 <script>
-import FillBlanks from "./components/FillBlanks.vue";
-
-import McqQuestions from "./components/McqQuestions.vue";
-
+import mcqCode from './components/mcqCode.vue'
+import fillBlanks from './components/fillBlanks.vue'
 export default {
-  name: "App",
-
+  name: 'App',
   components: {
-    McqQuestions,
-
-    FillBlanks,
+    mcqCode,fillBlanks
   },
-  data() {
-    return {
-      result: 0,
-    };
+  data(){
+  return {
+  Result:0,
+  }
   },
-  methods: {
-    submit() {
-      //event.preventDefault();
-      this.$refs.child1.submit();
-      this.$refs.child2.submit();
-      this.result = this.$refs.child1.result1 + this.$refs.child2.result2;
-      return this.result;
+  methods:{
+  GettingOutput(){
+  this.Result=0;
+    this.$refs.output1.GettingOutput()
+    this.$refs.output2.GettingOutput()
+    this.Result=this.$refs.output1.Result1+this.$refs.output2.Result2
     },
-  },
+},
+
 };
+
 </script>
 
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
-
   -webkit-font-smoothing: antialiased;
-
   -moz-osx-font-smoothing: grayscale;
-
   text-align: center;
-
   color: #2c3e50;
-
-  margin-top: 60px;
+  margin-top: 10px;
 }
+#btn {
+
+background-color: lightblue;
+
+}
+
 </style>
