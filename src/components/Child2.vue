@@ -47,6 +47,7 @@
           },
           reset1(){
           this.score=0;
+          this.show_blanks = true;
           for (let x of this.blanksItems){
                     x.given_ans=""
                   }
