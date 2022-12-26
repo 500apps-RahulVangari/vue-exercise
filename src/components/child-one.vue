@@ -19,6 +19,8 @@ export default {
             questions: [
                 { question: '5.Who is the Back-Bone of our India ?', answer: 'farmer' },
                 { question: '6.Who killed Mahatma Gandhi ?', answer: 'godse' },
+                {question : 'What is the current president of India?',answer:'draupadi murmu'},
+                {question : 'Who is the CM of Telangana?',answer:'kcr'},
             ],
             selectedAnswer: [],
             score: 0
