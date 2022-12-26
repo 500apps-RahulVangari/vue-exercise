@@ -1,25 +1,45 @@
 <template>
   <div id="app">
-    <!-- Marks should be shown here -->
-    <Child1 />
-    <Child2 />
-    <!-- Your Submit Code and  -->
+    <Child1  ref="multiple"/>
+    <Child2  ref="blanks"/>
+    <br>
+    <button @click="validateForm"><b>submit</b></button>
+    <h1>Marks:{{ score}}</h1>
   </div>
 </template>
-
 <script>
-import Child1 from './components/Child1.vue'
+import  Child1 from './components/Child1.vue'
 import Child2 from './components/Child2.vue'
-
 export default {
-  name: 'Main',
+  name: 'App',
   components: {
-    Child1,Child2
+       Child1,
+       Child2
+  },
+  data() {
+    return {
+      show_options: true,
+      score:0,
+    }
+  },
+  methods:{
+    validateForm() {
+      this.$refs.multiple.submit_answer();
+      this.$refs.blanks.submit_answer1();
+      this.score=this.$refs.multiple.score+this.$refs.blanks.score
+    },
   }
-  // Your Code for Submiting the anwsers
 }
 </script>
-
 <style>
-
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #2c3e50;
+  /* text-align: center; */
+  margin-top: 60px;
+}
 </style>
+
+
