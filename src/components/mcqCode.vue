@@ -1,6 +1,6 @@
 <template>
 
-<div id="quiz">
+<div id="mcqCode" clas="mcqCode">
 <h1>{{ msg }} </h1>
 <div v-for="each in QuestionsArray" :key="each.id">
 <p>{{ each.question}}</p>
@@ -78,14 +78,14 @@ return this.Result1
 </script>
 
 <style scoped>
-
-</style>
-#quiz {
+#mcqCode{
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
   margin-top: 10px;
-  backgroundColor:yellow;
+  background-color:lightgreen;
+  background-size: cover;
 }
+</style>
