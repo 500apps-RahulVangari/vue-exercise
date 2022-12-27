@@ -53,14 +53,11 @@
     methods:{
         finalOutput(){
             this.res1=0;
-            // console.log("1")
-            console.log("questions------>",this.questions)
             this.questions.forEach((item)=>{
-                console.log(item)
+    
              if( item.userAns===item.correctAns )  {
-                console.log("hoooooooooooooooo")
                 this.res1=this.res1+1;
-                console.log("this.res1",this.res1)
+                
             }
 
                 return this.res1;
