@@ -32,6 +32,7 @@ export default {
     },
 
     resetForm() {
+      this.score=0;
       this.$refs.multiple.reset();
       this.$refs.blanks.reset1();
     },

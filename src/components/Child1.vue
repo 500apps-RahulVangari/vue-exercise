@@ -58,11 +58,10 @@ export default {
       this.show_options = false;
     },
     reset() {
-      this.score = 0;
-      this.show_options = true;
       for (let x of this.multipleItems){
                   x.given_ans=""
                 }
+      this.show_options = true;
     },
   },
 };
