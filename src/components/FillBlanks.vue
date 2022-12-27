@@ -7,7 +7,7 @@
        {{item.q}}
        <!-- <p v-if="item.correct===item.ans">{{result2}}</p> -->
        <!-- {{result2}} -->
-       <input type="text" value=""/>
+       <input type="text" value="" v-model="item.ans" />{{ ans }}
 
     </div>
      
@@ -61,18 +61,15 @@ export default {
 
     },
     methods:{
-        submit(){
-            //event.preventDefault();
-            for(let i of this.questions){
-                       console.log(i)
-                if(i.ans===i.correct){
-        
-                    this.result2=this.result2+1
-                }
-               return this.result2
-                }
+       submit() {
+      this.result2 = 0;
+      this.questions.forEach((item) => {
+        if (item.ans === item.correct) {
+          this.result2 = this.result2 + 1;
         }
-        
+      });
+      return this.result2;
+    },
     }
 
     
