@@ -4,7 +4,7 @@
 
     <FillBlanks ref="child2" />
 
-    <input type="submit" value="Submit" />
+    <button type="submit" value="Submit" @click="submit>Submit</button>
     <p>{{ result }}</p>
   </div>
 </template>
