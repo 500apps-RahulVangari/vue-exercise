@@ -1,4 +1,4 @@
-# emo
+# quiz
 
 ## Project setup
 ```
