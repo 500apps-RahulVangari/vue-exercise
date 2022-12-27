@@ -29,6 +29,7 @@ export default {
       }
     },
   methods:{
+  this.result=0;
       submit(){
         this.$refs.child1.submit();
         this.$refs.child2.submit();
