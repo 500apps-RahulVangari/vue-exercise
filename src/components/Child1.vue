@@ -2,7 +2,7 @@
   <div>
     <h3>Multiple choice questions</h3>
     <form>
-      <div v-for="(item, index) in multipleItems" :key="index">
+      <div v-for="(item, index) in multipleItems" :key="index"><br />
         {{ item.question }}
         <div v-if="show_options">
           <div v-for="(option, index1) in item.options" :key="index1">

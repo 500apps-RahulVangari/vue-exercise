@@ -1,7 +1,7 @@
 <template>
     <div class="hello">
         <h3>fill in the blanks</h3>
-        <div v-for="(item,index) in blanksItems" :key="index">
+        <div v-for="(item,index) in blanksItems" :key="index"><br />
     {{ item.question1 }} <input type="text"  v-model="item.given_ans" v-if="show_blanks"/>
     <span v-else>
                 {{ item.given_ans }}
