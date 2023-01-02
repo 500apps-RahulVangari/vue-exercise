@@ -1,11 +1,17 @@
 <template>
-    <div class="text">
-        <p class="head" v-for="(item, index) in questions" :key="index">
+    <div class="bg text">
+        <div>
+            <h1>Fill in The Blanks</h1>
+            <p>There are 4 Fill in the Blank's in this section <br/>For Correct Answer it will Add +1 otherwise -1</p>
+        </div>
+        
+        <p v-for="(item, index) in questions" :key="index">
             {{ item.question }}
             <input type="text" v-model="selectedAnswer[index]" />
         </p>
+        <!-- <button @click.prevent="buttonEl()">submit</button>
         
-        <!-- <p>
+        <p>
             score : {{ score }}
         </p> -->
     </div>
@@ -28,15 +34,17 @@ export default {
     methods: {
         buttonEl() {
             for (let i = 0; i < this.questions.length+1; i++) {
-                if (this.selectedAnswer[i] === this.questions[i].answer) {
+                if (this.selectedAnswer[i] === this.questions[i].answer){
                     return this.score = this.score + 1;
+                    
                 }
+                
                 else {
-                    return this.score = this.score - 1;
+                   return this.score = this.score - 1;
                 }
             }
 
-        }
+        },
     }
 }
 </script>
@@ -44,7 +52,7 @@ export default {
     
 <style>
 .text {
-    text-align: left;
+    text-align:center;
 }
 
 .head {
@@ -67,5 +75,10 @@ export default {
     width: 200px;
     border-radius: 20px;
 
+}
+.bg{
+    background-color: rgb(213, 199, 182);
+    background-size: cover;
+    height:35vh;
 }
 </style>
