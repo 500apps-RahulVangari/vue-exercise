@@ -1,4 +1,4 @@
-# emo
+# my-app
 
 ## Project setup
 ```
