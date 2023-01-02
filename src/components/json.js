@@ -28,23 +28,7 @@ const B = `{
      "type":"fill"
   
     },
-    { "Q": " 2 is larger then ?",
-  
-      "options": [0,3,1,4],
-  
-      "id":1,
-  
-      "score":3,
-  
-      "Ans": "1,3",
-  
-      "ans": "",
-  
-      "type":"Msmcq"
-  
-    },
-  
-    {
+   {
   
       "Q": "Substraction of 11-3 ?",
   
@@ -75,22 +59,6 @@ const B = `{
       "type":"fill"
   
     },
-    { "Q": " 3 is less then ?",
-  
-      "options": [3, 4, 2, 5],
-  
-      "score":3,
-  
-       "id":2,
-  
-      "Ans": "4,5",
-  
-      "ans": "",
-  
-      "type":"Msmcq"
-  
-    },
-  
     {
   
       "Q": "Multiplication of 9*2 ?",
@@ -122,23 +90,7 @@ const B = `{
       "type":"fill"
   
     },
-    { "Q": " Multiple of 2 ?",
-  
-      "options": [1, 8, 2, 4],
-  
-      "id":3,
-  
-      "score":3,
-  
-      "Ans": "8,2,4",
-  
-      "ans": "",
-  
-      "type":"Msmcq"
-  
-    },
-  
-    {
+   {
   
       "Q": "Division of 10/2 ?",
   
@@ -169,22 +121,6 @@ const B = `{
       "type":"fill"
   
     },
-    { "Q": " Find Equal values",
-  
-      "options": [6,2,3,6],
-  
-      "id":4,
-  
-      "score":3,
-  
-      "Ans": "6,6", 
-  
-      "ans": "",
-  
-      "type":"Msmcq"
-  
-    },
-  
     {
   
       "Q": "Mod of 5%3 ?",

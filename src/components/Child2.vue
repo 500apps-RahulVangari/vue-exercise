@@ -39,8 +39,8 @@
       text-align: center;
     }
     #fill{
-     margin-left: 35%;
-      margin-right: 40%;
+     margin-left: 37%;
+      margin-right: 37%;
       background-color: rgba(81, 128, 19, 0.336);
        margin-top: 20px;
     } 

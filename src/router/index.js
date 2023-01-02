@@ -3,13 +3,17 @@ import VueRouter from "vue-router";
 import MCQ from '../components/Child1.vue';
 import ParenT from '../components/Parent.vue';
  import FILL from '../components/Child2.vue';
- import MS from '../components/Child3.vue';
  import SUBMIT from '../components/Submit.vue';
 Vue.use(VueRouter);
 Vue.config.productionTip = false
 const routes = [
     {
       path: "/",
+      name: "Home",
+      component: ParenT
+    },
+    {
+      path: "/home",
       name: "Home",
       component: ParenT
     },
@@ -22,11 +26,6 @@ const routes = [
         path: "/fill",
         name: "FILL",
         component: FILL
-      },
-      {
-        path: "/ms",
-        name: "MS",
-        component: MS
       },
       {
         path: "/submit",
