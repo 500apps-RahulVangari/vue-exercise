@@ -1,10 +1,13 @@
 <template>
   <div id="app">
     <nav>
-      <router-link to="/InstructionsView"><button>Home</button></router-link>  |
-      <router-link to="/multipleChoiceQuestions"><button>MCQ</button></router-link>  |
-      <router-link to="/fillInTheBlanks"><button>FB</button></router-link>  |
-      <router-link to="/resultsView"><button>Results Tab</button></router-link>
+      <div>
+        <router-link to="/InstructionsView"><button class="homebtn">Home</button></router-link>  
+        <router-link to="/multipleChoiceQuestions"><button class="mcqbtn">MCQ</button></router-link>  
+        <router-link to="/fillInTheBlanks"><button class="fbbtn">FB</button></router-link>  
+        <router-link to="/resultsView"><button class="resultbtn">Results</button></router-link>
+      </div>
+      
     </nav>
     <router-view/>
   </div>
@@ -16,8 +19,9 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
-  height:100vh;
+  color: #2c3e50; 
+  background-size:cover;
+  margin-right: 60px;
 }
 
 nav {
@@ -32,5 +36,49 @@ nav a {
 nav a.router-link-exact-active {
   color: #42b983;
 }
+.homebtn{
+  font-size: 25px;
+  color:white;
+  font-weight:bold;
+  background-color: black;
+  height: 40px;
+  width:100px;
+  margin-right:20px;
+  border-top-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+.mcqbtn{
+  font-size: 25px;
+  color:white;
+  font-weight:bold;
+  background-color: rgb(224, 27, 86);
+  height: 40px;
+  width:100px;
+  border-top-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  margin-right:20px;
+}
+.fbbtn{
+  font-size: 25px;
+  color:white;
+  font-weight:bold;
+  background-color: rgb(54, 27, 45);
+  height: 40px;
+  width:100px;
+  border-top-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  margin-right:20px;
+}
+.resultbtn{
+  font-size: 25px;
+  color:white;
+  font-weight:bold;
+  background-color: green;
+  height: 40px;
+  width:100px;
+  border-top-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
 
 </style>
