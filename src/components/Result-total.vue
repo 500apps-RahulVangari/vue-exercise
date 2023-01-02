@@ -1,12 +1,12 @@
 <template>
-    <div id="app">
-    
-      <!-- <MCQ  ref="mcq"/>
-      <Blanks ref="blanks"/> -->
-    
-      <button class="btn-submit" @click="submitEl">Submit</button>
-  
-      <p class="score-text">Score : {{ score }}</p>
+      <div id="app" class="bg-result">
+        <button class="btn-submit" @click="submitEl">Submit</button>
+        <p class="score-text">Score : {{ score }}</p>
+      <div id="visiblity">
+      
+        <MCQ  ref="mcq"/>
+        <Blanks ref="blanks"/> 
+    </div>
     </div>
   </template>
   <script src="https://unpkg.com/vue-router"></script>
@@ -27,14 +27,9 @@
     },
     methods:{
       submitEl(){
-        
-        this.$refs.MCQ.buttonEl();
-        
-        this.$refs.Blanks.buttonEl();
-      
-        this.score=this.$refs.MCQ.score+this.$refs.Blanks.score;
-
-        console.log(this.score)
+        this.$refs.mcq.score,
+        this.$refs.blanks.score,
+        this.score=this.$refs.mcq.score+this.$refs.blanks.score
       }
     }
   }
@@ -49,9 +44,8 @@
     text-align: center;
     color: #2c3e50;
     margin-top: 60px;
-    /* background-color:rgb(146, 139, 126); */
     padding-left: 50px;
-    height:100vh;
+    height:20vh;
     padding-top:30px;
   }
   .btn-next{
@@ -68,7 +62,8 @@
     font-weight:bold;
     font-size:20px;
     color:white;
-    border-radius: 20px;
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 20px;
     height: 50px;
     width:150px;
   }
@@ -76,6 +71,13 @@
       font-size: 25px;
       color:black;
       font-weight:bold;
+  }
+  #visiblity{
+    visibility: hidden;
+  }
+  .bg-result{
+    background-color: rgb(107, 105, 109);
+    height:20vh;
   }
   
   </style>
