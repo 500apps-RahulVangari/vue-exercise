@@ -1,82 +1,80 @@
 <template>
-    <div class="text">
-        <div class="text bg-color">
-            <h2 class="head">5. Which Country has Highest population?</h2>
-            <input class="input-size" type="text" v-model='India'  placeholder="Enter a Text"/>
-            <p :class="ageOutput.includes('Wrong') ? 'Wrongoutput' : 'Correctoutput'">Output :{{ ageOutput }}</p>    
-        </div>
-    
-        <div class="text bg-color">
-            <h2 class="head">6. Who killed Mahatma Gandhi?</h2>
-            <input class="input-size" type="text" v-model='Godse'  placeholder="Enter a Text"/>
-            <p :class="movieOutput.includes('Wrong') ? 'Wrongoutput' : 'Correctoutput'">Output :{{ movieOutput }}</p>    
-        </div>
-        
-    </div>
-          
-    </template>
-    
-    <script>
-    export default {
-        name:'QuizZ',
-        data() {
-            return {
-                answer4:'India',
-                India:'',
-                ageOutput:'',
-    
-                answer5:'Godse',
-                Godse:'',
-                movieOutput:'',
-    
-                score:0
-            }
-        },
-        methods:{
-            buttonEl(){
-                if(this.answer4===this.India){
-                    this.ageOutput='Correct Answer';
-                    this.score+=1;
-                }
-                else if(this.answer4!==this.India){
-                    this.ageOutput='Wrong Answer';
-                    this.score-=1;
-                }
-                if(this.answer5===this.Godse){
-                    this.movieOutput='Correct Answer';
-                    this.score+=1;
-                }
-                else{
-                    this.movieOutput='Wrong Answer';
-                    this.score-=1;
-                }
-            }
-        }
-    }
-    </script>
-    
-    <style>
-    .text{
-        text-align:left;
-    }
-    
-    .head {
-        font-size: 30px;
-        color:black;
-        font-family:"Roboto";
-    }
-    .Wrongoutput {
-        color: red
-    }
-    
-    .Correctoutput {
-        color: green
-    }
-    .input-size{
-        height:25px;
-        width:200px;
-        border-radius: 20px;
+  <div class="text">
+      
+      <h2 class="head">{{ currentQuestion.question}}</h2>
+      <ol>
+          <li v-for="(answer, index) in currentQuestion.answers" :key="index">
+          <input type="radio"  :value="answer" v-model="selectedAnswer">
+                  {{ answer }}
+          </li>
+      </ol>
+      <button @click="nextQuestion">Next Mcq Question</button>
 
-    }
-    
-    </style>
+  </div>
+</template>     
+<script>
+export default {
+  name: 'ChilDone',
+  data() {
+      return {
+          questions: [
+              {
+                  question: '1. What is the capital of France?',
+                  answers: ['Paris', 'London', 'New York', 'Tokyo'],
+                  correctAnswer: 'Paris'
+              },
+              {
+                  question: '2. What is the largest planet in our solar system?',
+                  answers: ['Earth', 'Mars', 'Jupiter', 'Saturn'],
+                  correctAnswer: 'Jupiter'
+              },
+              {
+                  question: '3 .Who is the First Prime Minister',
+                  answers: ['LalBahadur Sastry', 'BhagatSingh', 'Jawaharlal Nehru', 'PV Narasimha Rao'],
+                  correctAnswer: 'Jawaharlal Nehru'
+              },
+              {
+                  question: '4. What is the capital of India?',
+                  answers: ['Kolkata', 'Mumbai', 'Delhi', 'Hyderabad'],
+                  correctAnswer: 'Delhi'
+              }
+          ],
+          currentQuestionIndex:0,
+          selectedAnswer:'',
+          output:'',
+          score:0,
+      }
+  },
+  computed:{
+      currentQuestion(){
+          return this.questions[this.currentQuestionIndex];
+      }
+  },
+  methods:{
+      buttonEl(){
+          if(this.selectedAnswer==this.currentQuestion.correctAnswer){
+              this.score+=1;
+              console.log(this.score);
+          }
+          else{
+              this.score-=1;
+          }
+          this.selectedAnswer='';
+      },
+      nextQuestion(){
+        this.currentQuestionIndex++;
+      },
+  }
+}
+</script>
+
+<style>
+  .text{
+      text-align:left;
+  }
+  .head {
+      font-size: 30px;
+      color:black;
+      font-family:"Roboto";
+  }
+</style>
