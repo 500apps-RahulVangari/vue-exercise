@@ -1,15 +1,20 @@
 <template>
-  <div class="text">
-      
-      <h2 class="head">{{ currentQuestion.question}}</h2>
-      <ol>
-          <li v-for="(answer, index) in currentQuestion.answers" :key="index">
-          <input type="radio"  :value="answer" v-model="selectedAnswer">
-                  {{ answer }}
-          </li>
-      </ol>
-      <button @click="nextQuestion">Next Mcq Question</button>
+  <div class="text bg-mcq">
+    <div class="text">
+        <h1>Mulitple Choice Questions</h1>
+        <p>There are 4 MCQ's in this section <br/>For Correct Answer it will Add +1 otherwise -1</p>
+            <div>
+                <h2 class="head text">{{ currentQuestion.question}}</h2>
+                <ul>
+                    <li v-for="(answer, index) in currentQuestion.answers" :key="index">
+                    <input type="radio"  :value="answer" v-model="selectedAnswer">
+                            {{ answer }}
+                    </li>
+                </ul>
+            <button @click="nextQuestion" class="next">Next Mcq Question</button>
 
+            </div>
+    </div>
   </div>
 </template>     
 <script>
@@ -58,6 +63,7 @@ export default {
           }
           else{
               this.score-=1;
+              return this.emit("score",this.score)
           }
           this.selectedAnswer='';
       },
@@ -70,11 +76,31 @@ export default {
 
 <style>
   .text{
-      text-align:left;
+      text-align:center;
+      padding-top:10px;
   }
   .head {
       font-size: 30px;
       color:black;
       font-family:"Roboto";
+  }
+  
+  .next{
+    background-color: brown;
+    height:60px;
+    width:180px;
+    font-weight: bold;
+    color:white;
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    font-size:20px;
+  }
+  .bg-mcq{
+    background-color:rgb(107, 144, 152);
+    background-size:cover;
+    height:50vh;
+  }
+  ul{
+    list-style-type: none;
   }
 </style>
