@@ -1,77 +1,71 @@
 <template>
     <div class="text">
+        <p class="head" v-for="(item, index) in questions" :key="index">
+            {{ item.question }}
+            <input type="text" v-model="selectedAnswer[index]" />
+        </p>
         
-        <h2 class="head">{{ currentQuestion.question}}</h2>
-        <ol>
-            <li v-for="(answer, index) in currentQuestion.answers" :key="index">
-            <input type="radio"  :value="answer" v-model="selectedAnswer">
-                    {{ answer }}
-            </li>
-        </ol>
+        <!-- <p>
+            score : {{ score }}
+        </p> -->
     </div>
-</template>     
+</template>    
 <script>
 export default {
-    name: 'ChilDone',
+    name: 'QuizZ',
     data() {
         return {
             questions: [
-                {
-                    question: '1. What is the capital of France?',
-                    answers: ['Paris', 'London', 'New York', 'Tokyo'],
-                    correctAnswer: 'Paris'
-                },
-                {
-                    question: '2. What is the largest planet in our solar system?',
-                    answers: ['Earth', 'Mars', 'Jupiter', 'Saturn'],
-                    correctAnswer: 'Jupiter'
-                },
-                {
-                    question: '3 .Who is the First Prime Minister',
-                    answers: ['LalBahadur Sastry', 'BhagatSingh', 'Jawaharlal Nehru', 'PV Narasimha Rao'],
-                    correctAnswer: 'Jawaharlal Nehru'
-                },
-                {
-                    question: '4. What is the capital of India?',
-                    answers: ['Kolkata', 'Mumbai', 'Delhi', 'Hyderabad'],
-                    correctAnswer: 'Delhi'
-                }
+                { question: '5.Who is the Back-Bone of our India ?', answer: 'farmer' },
+                { question: '6.Who killed Mahatma Gandhi ?', answer: 'godse' },
+                {question : '7.What is the current president of India?',answer:'draupadi murmu'},
+                {question : '8.Who is the CM of Telangana?',answer:'kcr'},
             ],
-            currentQuestionIndex:0,
-            selectedAnswer:'',
-            output:'',
-            score:0,
+            selectedAnswer: [],
+            score: 0
         }
     },
-    computed:{
-        currentQuestion(){
-            return this.questions[this.currentQuestionIndex];
-        }
-    },
-    methods:{
-        buttonEl(){
-            if(this.selectedAnswer==this.currentQuestion.correctAnswer){
-                this.score+=1;
-                console.log(this.score);
+    methods: {
+        buttonEl() {
+            for (let i = 0; i < this.questions.length+1; i++) {
+                if (this.selectedAnswer[i] === this.questions[i].answer) {
+                    return this.score = this.score + 1;
+                }
+                else {
+                    return this.score = this.score - 1;
+                }
             }
-            else{
-                this.score-=1;
-            }
-            this.selectedAnswer='';
-            this.currentQuestionIndex++;
-            
+
         }
     }
 }
 </script>
-
+    
+    
 <style>
-    .text{
-        text-align:left;
-    }
-    .head {
-        font-size: 30px;
-        color:black;
-        font-family:"Roboto";
-    }
+.text {
+    text-align: left;
+}
+
+.head {
+    font-size: 20px;
+    color: black;
+    font-family: "Roboto";
+    font-weight:bold;
+}
+
+.Wrongoutput {
+    color: red
+}
+
+.Correctoutput {
+    color: green
+}
+
+.input-size {
+    height: 25px;
+    width: 200px;
+    border-radius: 20px;
+
+}
 </style>
