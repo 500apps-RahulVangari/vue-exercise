@@ -1,35 +1,20 @@
 <template>
-  <div id="app">
-    <mcqCode msg="Multipile Choice Questions" ref="output1"/>
-     <fillBlanks msg="Fill in the Blanks" ref="output2"/>
-     <button @click="GettingOutput()">submit</button>
-     <p>{{Result}}</p>
-     
+  <div>
+    <nav>
+      <b-button variant="success"><router-link to="/Start">Start</router-link></b-button>
+    </nav>
+    <router-view />
   </div>
 </template>
 
 <script>
-import mcqCode from './components/mcqCode.vue'
-import fillBlanks from './components/fillBlanks.vue'
+
 export default {
   name: 'App',
-  components: {
-    mcqCode,fillBlanks
+  data() {
+    return {
+    }
   },
-  data(){
-  return {
-  Result:0,
-  }
-  },
-  methods:{
-  GettingOutput(){
-  this.Result=0;
-    this.$refs.output1.GettingOutput()
-    this.$refs.output2.GettingOutput()
-    this.Result=this.$refs.output1.Result1+this.$refs.output2.Result2
-    },
-},
-
 };
 
 </script>
@@ -43,10 +28,23 @@ export default {
   color: #2c3e50;
   margin-top: 10px;
 }
+
 #btn {
 
-background-color: lightblue;
+  background-color: lightblue;
 
 }
 
+nav {
+  padding: 30px;
+}
+
+nav a {
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+nav a.router-link-exact-active {
+  color: #42b983;
+}
 </style>
