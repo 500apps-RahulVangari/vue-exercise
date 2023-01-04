@@ -1,14 +1,15 @@
 <template>
+
   <div>
     <nav>
-      <b-button variant="success"><router-link to="/Start">Start</router-link></b-button>
+      <b-button to="/Start" variant="outline-success" > Start </b-button>
     </nav>
-    <router-view />
+  <router-view />
   </div>
+
 </template>
 
 <script>
-
 export default {
   name: 'App',
   data() {
@@ -16,7 +17,6 @@ export default {
     }
   },
 };
-
 </script>
 
 <style>
@@ -25,26 +25,14 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: #01080e;
   margin-top: 10px;
 }
-
 #btn {
-
   background-color: lightblue;
-
 }
-
 nav {
   padding: 30px;
-}
-
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-nav a.router-link-exact-active {
-  color: #42b983;
+  text-align: center;
 }
 </style>

@@ -4,6 +4,7 @@ import fillBlanks from '../components/fillBlanks.vue'
 import mcqCode from '../components/mcqCode.vue'
 import StartPage from '../components/StartPage.vue'
 import EndPage from '../components/EndPage.vue'
+import checkBox from '../components/checkBox.vue'
 import BootstrapVue from 'bootstrap-vue/dist/bootstrap-vue.esm'; 
 Vue.use(BootstrapVue)
 Vue.use(VueRouter)
@@ -31,6 +32,11 @@ const routes = [
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: mcqCode
+  },
+  {
+    path: '/Check',
+    name: 'checkBox',
+    component: checkBox
   }
 ]
 

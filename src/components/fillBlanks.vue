@@ -1,33 +1,35 @@
 <template>
 
   <div class="fillBlanks" id="fillBlanks">
-        <h1>Fill in The Blanks</h1> 
-         <div v-for="ite in valu" :key=ite.id>{{ite.question}}
-        <input type="text"   v-model='ite.blank'/>{{blank}} 
+    <h2>SECTION 1) Fill in The Blanks</h2> 
+      <div v-for="item in fillBlankArray" :key=item.id>{{item.question}}
+        <input type="text"   v-model='item.fillBlank'/>{{fillBlank}} 
+      </div>
+      <obj_C/>
+    <b-button to="/mcq" variant="outline-secondary" > Next </b-button>
   </div>
-<obj_C/>
-    <router-link to="/mcq">Next</router-link> 
-</div>
+
 </template>
 
 <script>
+
 import obj_C from './ques.js';
 export default {
   name: 'fillBlanks',
   components:{obj_C},
   data() {
     return {
-      valu:obj_C[0],
+      fillBlankArray:obj_C[0],
       value:"",
       Result2:0,
-      blank:""
+      fillBlank:""
     };
   },
   methods: {
     GettingOutput() {
       this.Result2 = 0;
-      this.valu.forEach((each) => {
-        if (each.blank === each.correctAnswer) {
+      this.fillBlankArray.forEach((each) => {
+        if (each.fillBlank === each.correctAnswer) {
           this.Result2 = this.Result2 + 1;
         }
         return this.Result2;
@@ -42,7 +44,7 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: #01080e;
   margin-top: 10px;
   background-color: orange;
 }
