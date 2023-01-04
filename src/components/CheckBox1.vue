@@ -10,8 +10,6 @@
             </b-form-checkbox>
         </div>
     </div>
-    <button @click="sum3">Submit</button>
-    <p>result {{ result3 }}</p>
     <!-- <b-button variant=" danger" ><router-link to="/result">diaplay result</router-link></b-button> -->
     <b-button to="/result" variant="danger"> displayresult </b-button>
     </div>
