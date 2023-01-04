@@ -1,23 +1,26 @@
 <template>
   <div class="hello">
-    <h1>{{ msg }}</h1>
      <button @click="submit">Submit</button>
     <p> your total score is {{ result }}</p>
+     <b-button variant="outline-primary"><router-link to="/">refresh here</router-link></b-button>|
 
     <div id="m">
     <MCQPage ref="child1"/>
-         <FillBlankPage ref="child2"/></div>
+    <FillBlankPage ref="child2"/>
+    <CheckBoxPage ref="child3"/> </div>
   </div>
 </template>
 
 <script>
  import  FillBlankPage from '../components/FillBlankPage.vue'
  import MCQPage from '../components/StartPage.vue'
+ import CheckBoxPage from '../components/CheckBoxPage.vue'
 export default{
   name:"TotalMarks",
   components:{
      FillBlankPage,
-      MCQPage
+      MCQPage,
+      CheckBoxPage
   },
   data() {
     return {
@@ -29,7 +32,8 @@ export default{
       this.result = 0;
       this.$refs.child1.submit();
       this.$refs.child2.submit();
-      this.result = this.$refs.child1.result1 + this.$refs.child2.result2;
+      this.$refs.child3.submit();
+      this.result = this.$refs.child1.result1 + this.$refs.child2.result2+ this.$refs.child3.result3;
       return this.result;
     },
   },

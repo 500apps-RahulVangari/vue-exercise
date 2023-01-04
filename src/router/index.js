@@ -3,7 +3,7 @@ import VueRouter from 'vue-router'
  import HomeView from '../views/HomeView.vue'
  import  FillBlankPage from '../components/FillBlankPage.vue'
 import TotalMarks from '../components/TotalMarks.vue'
-// import MCQPage from '../components/MCQPage.vue'
+import CheckBoxPage from '../components/CheckBoxPage.vue'
 import MCQPage from '../components/StartPage.vue'
 Vue.use(VueRouter)
 
@@ -40,6 +40,11 @@ const routes = [
     path: '/marks',
     name: 'TotalMarks',
     component: TotalMarks
+  },
+  {
+    path: '/checkbox',
+    name: 'CheckBoxPage',
+    component: CheckBoxPage
   },
 ]
 

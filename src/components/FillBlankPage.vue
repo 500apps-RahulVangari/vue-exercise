@@ -7,7 +7,8 @@
         </div>
     <button @click="submit">Submit</button>
     <p>{{ result2 }}</p>
-    <b-button variant="outline-primary"><router-link to="/marks"> total marksPage</router-link></b-button>|
+        <b-button variant="outline-primary"><router-link to="/checkbox">Next</router-link></b-button>|
+    
 </div>
 </template>
 <script>

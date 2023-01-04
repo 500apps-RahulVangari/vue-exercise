@@ -5,12 +5,12 @@
 
     <div class ='mcq' v-for="i in questions" :key="i.id">{{ i.q }}
     <div v-for="ans in i.options" :key="ans.id">
-       <input type="radio" :value="ans" v-model="i.ans" />{{ ans }}
+       <input type="radio" :value="ans" v-model="i.ans"  > {{ ans }}
       </div>
     </div>
 
     <button @click="submit">Submit</button>
-    <p>{{ result1 }}</p>
+     <p>{{ result1 }} </p>
      <b-button variant="outline-primary"><router-link to="/blanks">Next</router-link></b-button>|
         </div>
 </template>
@@ -31,6 +31,7 @@ export default{
     submit() {
       this.result1 = 0;
       this.questions.forEach((i) => {
+        console.log(i.ans,i.correct)
         if(i.ans === i.correct) {
           this.result1 = this.result1 + 1;
         }

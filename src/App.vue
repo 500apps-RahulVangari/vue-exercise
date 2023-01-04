@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     
-      <b-button @click="startPage" variant="outline-primary"><router-link to="/">refresh here</router-link></b-button>|
+      <!-- <b-button variant="outline-primary"><router-link to="/">refresh here</router-link></b-button>| -->
      
     <router-view/>
     

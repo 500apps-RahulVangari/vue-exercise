@@ -69,7 +69,24 @@ let B =`{
           "correct": "h1",
           "qustype":"blanks",
           "ans": ""
+        },
+        {
+          "q": "1.The common element which describe the web page, is ?",
+          "options": ["heading","paragraph", "None of these"],
+          "index": "1",
+          "correct": ["heading","paragraph"],
+          "qustype":"check",
+          "ans": []
+        },
+        {
+          "q": "5.Correct HTML tags",
+          "options": ["h1","h6","None of the above"],
+          "correct":[ "h1","h6"],
+          "index": "5",
+          "qustype":"check",
+          "ans": []
         }
+       
       ]
       
 }`
@@ -77,8 +94,9 @@ let A = JSON.parse(B);
  A = A.questions;
 let M = [];
 let FILL = [];
-A.forEach((item) => (item.qustype=='mcq')? M.push(item): FILL.push(item)
+let check=[];
+A.forEach((item) => (item.qustype=='mcq')? M.push(item): (item.qustype=="blanks")?FILL.push(item):check.push(item)
   
 );
-let C = [M,FILL];
+let C = [M,FILL,check];
 export default C;
