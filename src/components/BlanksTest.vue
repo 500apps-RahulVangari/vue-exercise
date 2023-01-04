@@ -1,52 +1,71 @@
 <template>
 
     <div id="blank">
-    <div v-for = "data in questions " :key="data.id">{{ data.qns }}
-        <input type="text"   v-model="data.userAns" >
+      <h1>Fill in the blanks</h1>
+      <hr />
+<totalQns/>
+    <div v-for = "data in question" :key="data.id">{{ data.qns }}
+        <input type="text"  v-model="data.userAns" >
       </div>
+      <b-button to="/CheckBoxs">Next </b-button>
     
-    </div>
-    
+    </div> 
     </template>
     
     <script>
-    
+    import totalQns from './json';
     
     export default {
-    
+      components:{
+      totalQns
+      },
     name: 'BlanksTest',
+    // props:{question:Array},
     data (){
     return{
 
-      res2:0,
-  
-      questions:[
-        {qns:"5.What is the national Bird of india?",correctAns:"peacock", index:1, userAns:""},
-        {qns:"6.Which Hand shows hours in a clock ?", correctAns:"short hand",index:2, userAns:""},
-        {qns:"7.How many seconds in a minute ?", correctAns:"60",index:3,  userAns:""},
-        {qns:"8.How many rings are present in Olympic logo ?", correctAns:"5",index:4,  userAns:""},
-        
-
-    ],
-    value:"",
-      
-      
+     res2:0,
+  question:totalQns[1],
+      value:"",
+ 
     }
   },
+  
     methods:{
       finalOutput(){
         this.res2=0;
-       this.questions.forEach((item)=>{
+       this.question.forEach((item)=>{
         
           if(item.userAns === item.correctAns ) {
-            this.res2 = this.res2+1;
+            this.res2 = this.res2+2;
             
         }  
          return this.res2;
         })
       }
+    },
+    reset()
+  {
+    for (let i of this.totalQns){
+        console.log("hiiiiiii")
+      i.userAns=null
     }
+    this.score=0
+    this.value=""
+  }
+    
     
 }
         
     </script>
+     <style>
+     #blank {
+      font-family: Avenir, Helvetica, Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      text-align: center;
+      color: #2c3e50;
+    }
+  </style>
+    
+    
