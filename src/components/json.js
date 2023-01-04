@@ -1,11 +1,9 @@
-
-
-let object=`{
+let object = `{
 "questions": [
 {
 "Question": "1.what is vue js ?",
 "options": ["frontend framework", "backend framework"],
-"correct": "frontend framework",
+"correct": "frontend framework", 
 "answer": "",
 "index": "one",
 "Qtype":"mcq"
@@ -57,6 +55,22 @@ let object=`{
 "option": "6",
 "answer": "",
 "Qtype":"blanks"
+},
+{
+"Question":"1. which is programming language ?" ,
+"options": ["java",".net","oracle"],
+"correct": ["java",".net"],
+"answer": [] ,
+"index" : "two" ,
+"Qtype" : "Cbox" 
+},
+{
+"Question": "2.what is java ?",
+"options": ["High level Language","platform independent","middle level language"],
+"correct": ["High level Language","platform independent"],
+"answer": [],
+"index": "one",
+"Qtype":"Cbox"
 }
 ]
 }`
@@ -64,9 +78,8 @@ let num = JSON.parse(object);
 num = num.questions;
 let M = [];
 let FILL = [];
-num.forEach((item) => (item.Qtype=='mcq')?M.push(item):FILL.push(item));
-let obj=[M,FILL];
+let Cbox=[];
+// num.forEach((item) => (item.Qtype == "mcq" ? M.push(item) : FILL.push(item)));
+num.forEach((item) => (item.Qtype=='mcq')? M.push(item):(item.Qtype=='blanks')? FILL.push(item):Cbox.push(item));
+let obj = [M, FILL,Cbox];
 export default obj;
-
-
-

@@ -8,7 +8,8 @@
   </div>
   <!-- <button @click="submit">Submit</button> 
     <p>result {{ result2 }}</p> -->
-    <b-button variant=" danger" ><router-link to='/result'>display result</router-link></b-button>
+    <!-- <b-button variant=" danger" ><router-link to='/box'>next page</router-link></b-button> -->
+    <b-button to="/box" variant="danger" > nextpage </b-button>
     <!-- <b-button variant="danger"  href="result">display result</b-button> -->
     </div>
     </template>

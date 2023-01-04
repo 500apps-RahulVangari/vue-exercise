@@ -5,6 +5,7 @@ import HomeView from '../views/HomeView.vue'
  import FillBlanks from '../components/FillBlanks'
  import ResultPage from '../components/ResultPage'
  //import ParentVue from '../components/ParentVue'
+ import CheckBox1 from '../components/CheckBox1'
 
 Vue.use(VueRouter)
 
@@ -32,6 +33,11 @@ const routes = [
     path: '/blanks',
     name: 'FillBlanks',
     component: FillBlanks
+  },
+  {
+    path: '/box',
+    name: 'CheckBox1',
+    component: CheckBox1
   },
     {
     path: '/result',

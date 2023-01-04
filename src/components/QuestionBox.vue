@@ -8,8 +8,10 @@
         <input type="radio" :value="answer" v-model="i.answer" />{{ answer }}
       </div>
     </div>
-    <!-- <p>result {{ result1 }}</p> -->
-    <b-button variant=" danger" ><router-link to="/blanks">nextpage</router-link></b-button>
+    <!-- <button @click="sum1">Submit</button> 
+    <p>result {{ result1 }}</p> -->
+    <!-- <b-button variant=" danger" ><router-link to="/blanks">nextpage</router-link></b-button> -->
+    <b-button to="/blanks" variant="danger" > nextpage </b-button>
     <!-- <b-button variant="danger" href="/blanks">next page</b-button> -->
     </div>
     </template>
