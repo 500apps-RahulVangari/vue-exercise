@@ -7,6 +7,7 @@
      <button> <router-link to="/">Home</router-link>  </button>&nbsp;&nbsp;
       <button> <router-link to="/mcq">MCQ</router-link> </button>&nbsp;&nbsp;
       <button> <router-link to="/fill">FILL</router-link> </button>&nbsp;&nbsp;
+      <button> <router-link to="/ms">MS</router-link> </button>&nbsp;&nbsp;
       <button> <router-link to="/submit">SUBMIT</router-link> </button>&nbsp;&nbsp;
     </nav>
     <router-view/>
