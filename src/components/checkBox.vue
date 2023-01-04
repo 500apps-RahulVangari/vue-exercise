@@ -33,7 +33,6 @@ export default {
         if (JSON.stringify(item.checkOption)  === JSON.stringify(item.correctAnswer)) {
           this.Result3 = this.Result3 + 1;
         }
-  
         return this.Result3;
       })
     }

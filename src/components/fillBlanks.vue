@@ -39,7 +39,7 @@ export default {
 };
 </script>
 <style>
-#fillBlanks {
+#fillBlanks{
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
