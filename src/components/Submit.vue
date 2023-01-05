@@ -42,7 +42,7 @@ export default {
       this.$refs.child1.submit1();
       this.$refs.child2.submit2();
       this.$refs.child3.submit3();
-      this.result =this.$refs.child1.result1 +this.$refs.child2.result2 ;//+ this.$refs.child3.result3;
+      this.result =this.$refs.child1.result1 +this.$refs.child2.result2 + this.$refs.child3.result3;
     },
     next(){
       this.$router.forward();
